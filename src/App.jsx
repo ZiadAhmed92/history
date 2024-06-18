@@ -1,6 +1,6 @@
-import { useState } from "react";
+
 import "./App.css";
-import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Month1 from "./components/Month1";
 import History from "./components/History";
 import Day from "./components/Day";
