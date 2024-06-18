@@ -266,9 +266,9 @@ export default function Month1() {
         </ChartComponent>
       </div>
       <div className='text-center mt-5'>
-        <Link to="/history/year"><button style={{ background: "#F85899", color: "white" }} className='btn px-3 mx-2'>1</button></Link>
-        <Link to="/history/year/month2"><button style={{ background: "rgb(243, 223, 227)", color: "black" }} className='btn px-3 mx-2'>2</button></Link>
-        <Link to="/history/year/month3"><button style={{ background: "rgb(243, 223, 227)", color: "black" }} className='btn px-3 mx-2'>3</button></Link>
+        <Link to="/speech/history/year"><button style={{ background: "#F85899", color: "white" }} className='btn px-3 mx-2'>1</button></Link>
+        <Link to="/speech/history/year/month2"><button style={{ background: "rgb(243, 223, 227)", color: "black" }} className='btn px-3 mx-2'>2</button></Link>
+        <Link to="/speech/history/year/month3"><button style={{ background: "rgb(243, 223, 227)", color: "black" }} className='btn px-3 mx-2'>3</button></Link>
       </div>
     </div>
   );

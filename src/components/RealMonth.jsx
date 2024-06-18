@@ -152,10 +152,10 @@ const Month1 = () => {
     <div className="control-pane">
       <div className='w-100 mt-5'>
       <div className='text-center'>
-        <Link to={`/${localStorage.getItem("Token")}`}><button style={{background:" rgb(243, 223, 227)",color:"black"}} className='btn px-3 mx-2' >Day</button></Link>
-        <Link to="/history/week"><button style={{background:" rgb(243, 223, 227)",color:"black"}} className='btn px-3 mx-2'>Week</button></Link>
-        <Link to="/history/month"><button style={{background:" #F85899",color:"white"}}  className='btn px-3 mx-2'>Month</button></Link>
-        <Link to="/history/year"><button style={{background:" rgb(243, 223, 227)",color:"black"}} className='btn px-3 mx-2'>Year</button></Link>
+          <Link to={`/${localStorage.getItem("Token")}/${localStorage.getItem("UserId")}`}><button style={{background:" rgb(243, 223, 227)",color:"black"}} className='btn px-3 mx-2' >Day</button></Link>
+        <Link to="/speech/history/week"><button style={{background:" rgb(243, 223, 227)",color:"black"}} className='btn px-3 mx-2'>Week</button></Link>
+          <Link to="/speech/history/month"><button style={{background:" #F85899",color:"white"}}  className='btn px-3 mx-2'>Month</button></Link>
+          <Link to="/speech/history/year"><button style={{background:" rgb(243, 223, 227)",color:"black"}} className='btn px-3 mx-2'>Year</button></Link>
       </div>
     </div> 
       <style>{SAMPLE_CSS}</style>

@@ -18,7 +18,7 @@ import Lottie from "lottie-react";
 import img1 from "../animation/empty.json"
 import { useLayoutEffect } from "react";
 import './History.css'
-import { speechContext } from "./context/Store";
+
 
 export let data1 = [];
 
@@ -56,13 +56,13 @@ const SAMPLE_CSS = `
 `;
 
 const Day = () => {
-  const { token } = useParams();
+  const { token ,id } = useParams();
   
   const [day, setDay] = useState({ Day: {} });
-  let { dataUser,userData } = useContext(speechContext);
-  console.log(userData)
+
+  console.log(id ,token)
   localStorage.setItem("Token",token)
-  localStorage.setItem("UserId",userData?.userId)
+  localStorage.setItem("UserId", id)
   async function getHistoryFotDay() {
     let { data } = await axios.get(
       `https://speech-emotions-874.onrender.com/emotions/history/day/${localStorage.getItem(
@@ -101,7 +101,7 @@ const Day = () => {
     { x: "Surprised", y: day.Day.Surprise, text: "Surprised", fill: "#FF6900" }
   ];
   useLayoutEffect(() => {
-    dataUser()
+
     getHistoryFotDay();
   }, []);
 
@@ -128,7 +128,7 @@ const Day = () => {
     return <>
     <div className="w-100 mt-5  mx-auto">
         <div className="text-center">
-          <Link to="">
+          <Link to={`/${localStorage.getItem("Token")}/${id}`}>
             <button
               style={{ background: " #F85899", color: "white" }}
               className="btn btn-danger px-3 mx-2"
@@ -136,7 +136,7 @@ const Day = () => {
               Day
             </button>
           </Link>
-          <Link to="week">
+          <Link to="/speech/history/week">
             <button
               style={{ background: " rgb(243, 223, 227)", color: "black" }}
               className="btn px-3 mx-2"
@@ -144,7 +144,7 @@ const Day = () => {
               Week
             </button>
           </Link>
-          <Link to="month">
+          <Link to="/speech/history/month">
             <button
               style={{ background: " rgb(243, 223, 227)", color: "black" }}
               className="btn px-3 mx-2"
@@ -152,7 +152,7 @@ const Day = () => {
               Month
             </button>
           </Link>
-          <Link to="year">
+          <Link to="/speech/history/year">
             <button
               style={{ background: " rgb(243, 223, 227)", color: "black" }}
               className="btn px-3 mx-2"
@@ -176,7 +176,7 @@ const Day = () => {
     <>
       <div className="w-100 mt-5">
         <div className="text-center">
-          <Link to={`/${localStorage.getItem("Token")}`}>
+          <Link to={`/${localStorage.getItem("Token")}/${id}`}>
             <button
               style={{ background: " #F85899", color: "white" }}
               className="btn px-3 mx-2"
@@ -184,7 +184,7 @@ const Day = () => {
               Day
             </button>
           </Link>
-          <Link to="/history/week">
+          <Link to="/speech/history/week">
             <button
               style={{ background: " rgb(243, 223, 227)", color: "black" }}
               className="btn px-3 mx-2"
@@ -192,7 +192,7 @@ const Day = () => {
               Week
             </button>
           </Link>
-          <Link to="/history/month">
+          <Link to="/speech/history/month">
             <button
               style={{ background: " rgb(243, 223, 227)", color: "black" }}
               className="btn px-3 mx-2"
@@ -200,7 +200,7 @@ const Day = () => {
               Month
             </button>
           </Link>
-          <Link to="/history/year">
+          <Link to="/speech/history/year">
             <button
               style={{ background: " rgb(243, 223, 227)", color: "black" }}
               className="btn px-3 mx-2"

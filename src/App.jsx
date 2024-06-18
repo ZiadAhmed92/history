@@ -13,7 +13,7 @@ import Month from "./components/Month";
 
 function App() {
   const router = createBrowserRouter([{
-    path: "/:token",
+    path: "/:token/:id",
     element: <History />,
     children: [
       {
