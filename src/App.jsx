@@ -1,6 +1,6 @@
 
 import "./App.css";
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Month1 from "./components/Month1";
 import History from "./components/History";
 import Day from "./components/Day";
@@ -15,7 +15,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <WelcomeFirst />,
+      element: <Navigate to="/defaultToken/defaultId" replace />,
     },
     {
       path: "/:token/:id",
